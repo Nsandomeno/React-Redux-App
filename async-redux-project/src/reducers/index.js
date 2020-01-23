@@ -1,6 +1,6 @@
 const initialState = {
     isLoading: false,
-    coin: {},
+    coins: null,
     error: ''
 }
 
