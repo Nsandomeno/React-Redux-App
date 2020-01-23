@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { getCoinData } from '../actions/index.js';
 import LoaderSpinner from './loaderSpinner.js';
+import Display from './display.js';
 
 
 function Ticker(props) {
@@ -12,6 +13,7 @@ function Ticker(props) {
             <button> Update </button>
             {!props.isLoading && !props.coins && <h2>Get some coin data!</h2>}
             {props.isLoading && <LoaderSpinner /> }
+            {props.coins && !props.isLoading && <Display coins={props.coins} />}
         </div>
     )
 }

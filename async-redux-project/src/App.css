@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+ /* COIN CARDS */
+ .coinCard {
+   width: 20%;
+   margin-right: 2.5%;
+   margin-left: 2.5%;
+ }
+
+
+
+  /* COIN CARD DIV */
+  .CardCointainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: baseline;
+    margin-top: 2.5%;
+  }
