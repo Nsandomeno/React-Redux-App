@@ -23,6 +23,7 @@ export const reducer = (state = initialState, action) => {
         case FAILURE:
             return {
                 ...state,
+                isLoading: false,
                 error: 'DATA COULD NOT BE RECEIVED.'
             }
         default:

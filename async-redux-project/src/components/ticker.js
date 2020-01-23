@@ -1,19 +1,29 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { getCoinData } from '../actions/index.js';
+import { getCoinData, SUCCESS } from '../actions/index.js';
 import LoaderSpinner from './loaderSpinner.js';
 import Display from './display.js';
+
+import '../App.css';
+
 
 
 function Ticker(props) {
     return (
         <div>
             <h1> Coin Info Checkup </h1>
-            <button onClick={props.getCoinData}> Get Coin Data </button>
-            <button> Update </button>
-            {!props.isLoading && !props.coins && <h2>Get some coin data!</h2>}
-            {props.isLoading && <LoaderSpinner /> }
-            {props.coins && !props.isLoading && <Display coins={props.coins} />}
+            {/*  No Coin Data in state */}
+                {!props.coins && <button onClick={props.getCoinData}> Get Coin Data </button>}
+            {/*  Coin Data in State and Fetch Complete (SUCCESS) */}
+                {props.coins && !props.isLoading && <button onClick={props.getCoinData}> Update </button>}
+            {/* Initial State Settings */}
+                {!props.isLoading && !props.coins && !props.error && <h2>Get some coin data!</h2>}
+            {/* Loading State */}
+                {props.isLoading && <LoaderSpinner /> }
+            {/* Displaying Coin Data once Fetch is Successful (SUCCESS) */}
+                {props.coins && !props.isLoading && <Display coins={props.coins} />}
+            {/* Error State */}
+                {props.error && <div className="error-div"> <h1 className="error-message"> {props.error} </h1> </div>}
         </div>
     )
 }
