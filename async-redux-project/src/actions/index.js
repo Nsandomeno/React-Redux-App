@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const GET_COIN_DATA_START = 'GET_COIN_DATA_START';
-const SUCCESS = 'SUCCESS';
-const FAILURE = 'FAILURE';
+export const GET_COIN_DATA_START = 'GET_COIN_DATA_START';
+export const SUCCESS = 'SUCCESS';
+export const FAILURE = 'FAILURE';
 
 export const getCoinData = () => (dispatch) => {
     dispatch( { type: 'GET_COIN_DATA_START' } );
